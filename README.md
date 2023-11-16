@@ -15,7 +15,8 @@ Backups of the EFI for my main rig
 | Audio | Realtek ALC897 |
 
 ## Device locations
-| PCIe Slot | Device | Transfer Rate |
+### PCIe devices 
+| PCIe Slot | Device | Link Speed |
 | --- | --- | --- |
 | `M2_1` | Sabrent Rocket nano (512GB) | PCIe 3.0 x4 |
 | `M2_2` | Samsung SSD 960 EVO (500GB) | PCIe 3.0 x4 |
@@ -24,6 +25,7 @@ Backups of the EFI for my main rig
 | `PCI_E3` | Empty | -- |
 | `PCI_E4` | SAS2008 PCI-Express Fusion-MPT SAS-2 [Falcon] | PCIe 2.0 x1 |
 
+### SATA devices over `PCI_E4`
 | SAS Domain Port | Device |
 | --- | --- | 
 | `SCSI Target Device @ 9` | APPLE HDD ST500L | 
@@ -89,7 +91,7 @@ Current location: **Sabrent Rocket nano**
 | `ECM-Override.kext` | Add | `23.0.0` | `23.9.99` |
 | `FeatureUnlock.kext` | Add | `17.0.0` | `23.9.99` |
 | `IO80211FamilyLegacy.kext` | Add | `23.0.0` | `23.9.99` |
-| `IOSkywalkFamily.kext` | Add</br> | `23.0.0` | `23.9.99` |
+| `IOSkywalkFamily.kext` | Add</br>Block | `23.0.0` | `23.9.99` |
 | `Lilu.kext` | Add | `17.0.0` | `23.9.99` |
 | `NootedRed.kext` | Add</br>Add | `19.0.0`</br>`23.0.0` | `21.9.9`</br>`23.9.99` |
 | `NVMeFix.kext` | Add | `17.0.0` | `23.9.99` |
