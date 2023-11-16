@@ -48,11 +48,11 @@ Current location: **Sabrent Rocket nano**
 
 ### ACPI configuration
 | ACPI table | Prebuilt | Enabled | Notes |
-| --- | --- | --- |
-| `SSDT-CPUR` | Yes | Yes | Required for macOS boot |
-| `SSDT-EC-USBX-DESKTOP` | Yes | Yes | Required for macOS boot |
-| `SSDT-GPU-DISABLE` | No | No | Disabled for non-Metal + Metal |
-| `SSDT-HPET` | No | Yes | Disabling makes pre-Big Sur freeze |
+| --- | --- | --- | --- |
+| `SSDT-CPUR` | Yes | Yes | Required for macOS boot |  
+| `SSDT-EC-USBX-DESKTOP` | Yes | Yes | Required for macOS boot |  
+| `SSDT-GPU-DISABLE` | No | No | Disabled for non-Metal + Metal |  
+| `SSDT-HPET` | No | Yes | Disabling makes pre-Big Sur freeze |  
 
 ### Driver configuration
 | Driver | Source |
@@ -88,8 +88,7 @@ Current location: **Sabrent Rocket nano**
 | `ECM-Override.kext` | Add | `23.0.0` | `23.9.99` |
 | `FeatureUnlock.kext` | Add | `17.0.0` | `23.9.99` |
 | `IO80211FamilyLegacy.kext` | Add | `23.0.0` | `23.9.99` |
-| `IOSkywalkFamily.kext` | Add | `23.0.0` | `23.9.99` |
-| `IOSkywalkFamily.kext` | Block | `23.0.0` | `23.9.99` |
+| `IOSkywalkFamily.kext` | Add</br> | `23.0.0` | `23.9.99` |
 | `Lilu.kext` | Add | `17.0.0` | `23.9.99` |
 | `NootedRed.kext` | Add</br>Add | `19.0.0`</br>`23.0.0` | `21.9.9`</br>`23.9.99` |
 | `NVMeFix.kext` | Add | `17.0.0` | `23.9.99` |
