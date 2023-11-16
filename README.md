@@ -36,15 +36,16 @@ Backups of the EFI for my main rig
 
 ## Operating Systems
 | OS | Version | Location |
+| --- | --- | --- |
 | macOS | Sonoma 14.2b3 | Sabrent Rocket nano |
 | macOS | Ventura 13.6.3 | Sabrent Rocket nano |
 | Linux | Manjaro 23.0.4 | SanDisk SD6SB1M1 |
 | Windows | 11 23590 | Samsung SSD 960 EVO |
 
 ## OpenCore Setup
-OpenCore version: **0.9.5**
-Last kext updates: **10.26.23** 
-Current location: **Sabrent Rocket nano**
+OpenCore version: **0.9.5**  
+Last kext updates: **10.26.23**  
+Current location: **Sabrent Rocket nano**  
 
 ### ACPI configuration
 | ACPI table | Prebuilt | Enabled | Notes |
