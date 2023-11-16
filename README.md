@@ -1,6 +1,7 @@
-# Nora-EFI
-Backups of the EFI for my main rig
+# Nora EFI and device configuration
+**This repository is used to back up the EFI folder for Nora**, which is my main AMD64 build.
 
+## Quick specifications
 | Hardware | Model |
 | --- | --- |
 | Motherboard | MSI B550 MPG GAMING PLUS |
@@ -13,6 +14,8 @@ Backups of the EFI for my main rig
 | WiFi | Broadcom BCM943602CS |
 | Bluetooth | Broadcom BCM943602CS |
 | Audio | Realtek ALC897 |
+| PSU | Thermaltake Smart 80+ 500W |
+| Case | Phanteks G500A D-RGB |
 
 ## Device locations
 ### PCIe devices 
