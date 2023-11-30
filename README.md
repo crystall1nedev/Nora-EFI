@@ -43,13 +43,15 @@
 | OS | Version | Location |
 | --- | --- | --- |
 | macOS | Sonoma 14.2b3 | Sabrent Rocket nano |
-| macOS | Ventura 13.6.3 | Sabrent Rocket nano |
+| macOS | Ventura 13.6.3 | TBA |
+| macOS | Catalina 10.15.7 | TBA |
+| macOS | High Sierra 10.13.6 | TBA |
 | Linux | Manjaro 23.0.4 | SanDisk SD6SB1M1 |
 | Windows | 11 23590 | Samsung SSD 960 EVO |
 
 ## OpenCore Setup
-OpenCore version: **0.9.5**  
-Last kext updates: **10.26.23**  
+OpenCore version: **0.9.7**  
+Last kext updates: **11.17.23**  
 Current location: **Sabrent Rocket nano**  
 
 ### ACPI configuration
@@ -103,7 +105,7 @@ Current location: **Sabrent Rocket nano**
 | `SMCAMDProcessor.kext` | Add | `17.0.0` | `23.9.99` |
 | `USBMap.kext` | Add | `17.0.0` | `23.9.99` |
 | `VirtualSMC.kext` | Add | `17.0.0` | `23.9.99` |
-| `WhateverGreen.kext` | Add | `22.0.0` | `22.9.99` |
+| `WhateverGreen.kext` | Add | `17.0.0`</br>`22.0.0` | `18.9.99`</br>`22.9.99` |
 
 
 
