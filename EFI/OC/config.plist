@@ -1862,9 +1862,9 @@
 				<key>Arguments</key>
 				<string></string>
 				<key>Auxiliary</key>
-				<true/>
+				<false/>
 				<key>Comment</key>
-				<string>ListPartitions.efi</string>
+				<string>Reset System</string>
 				<key>Enabled</key>
 				<true/>
 				<key>Flavour</key>
@@ -1872,65 +1872,21 @@
 				<key>FullNvramAccess</key>
 				<false/>
 				<key>Name</key>
-				<string>ListPartitions.efi</string>
+				<string>Reset System</string>
 				<key>Path</key>
-				<string>ListPartitions.efi</string>
-				<key>RealPath</key>
-				<false/>
-				<key>TextMode</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>Arguments</key>
-				<string></string>
-				<key>Auxiliary</key>
-				<true/>
-				<key>Comment</key>
-				<string>OpenControl.efi</string>
-				<key>Enabled</key>
-				<true/>
-				<key>Flavour</key>
-				<string>Auto</string>
-				<key>FullNvramAccess</key>
-				<false/>
-				<key>Name</key>
-				<string>OpenControl.efi</string>
-				<key>Path</key>
-				<string>OpenControl.efi</string>
-				<key>RealPath</key>
-				<false/>
-				<key>TextMode</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>Arguments</key>
-				<string></string>
-				<key>Auxiliary</key>
-				<true/>
-				<key>Comment</key>
-				<string>OpenShell.efi</string>
-				<key>Enabled</key>
-				<true/>
-				<key>Flavour</key>
-				<string>Auto</string>
-				<key>FullNvramAccess</key>
-				<false/>
-				<key>Name</key>
-				<string>OpenShell.efi</string>
-				<key>Path</key>
-				<string>OpenShell.efi</string>
-				<key>RealPath</key>
-				<false/>
-				<key>TextMode</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>Arguments</key>
-				<string></string>
-				<key>Auxiliary</key>
-				<true/>
-				<key>Comment</key>
 				<string>ResetSystem.efi</string>
+				<key>RealPath</key>
+				<false/>
+				<key>TextMode</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>Arguments</key>
+				<string>FIRMWARE</string>
+				<key>Auxiliary</key>
+				<false/>
+				<key>Comment</key>
+				<string>UEFI Settings through ResetSystem</string>
 				<key>Enabled</key>
 				<true/>
 				<key>Flavour</key>
@@ -1938,7 +1894,7 @@
 				<key>FullNvramAccess</key>
 				<false/>
 				<key>Name</key>
-				<string>ResetSystem.efi</string>
+				<string>UEFI Settings</string>
 				<key>Path</key>
 				<string>ResetSystem.efi</string>
 				<key>RealPath</key>
@@ -1950,9 +1906,9 @@
 				<key>Arguments</key>
 				<string></string>
 				<key>Auxiliary</key>
-				<true/>
+				<false/>
 				<key>Comment</key>
-				<string>RtcRw.efi</string>
+				<string>UEFI Shell</string>
 				<key>Enabled</key>
 				<true/>
 				<key>Flavour</key>
@@ -1960,7 +1916,73 @@
 				<key>FullNvramAccess</key>
 				<false/>
 				<key>Name</key>
-				<string>RtcRw.efi</string>
+				<string>UEFI Shell</string>
+				<key>Path</key>
+				<string>OpenShell.efi</string>
+				<key>RealPath</key>
+				<false/>
+				<key>TextMode</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>Arguments</key>
+				<string></string>
+				<key>Auxiliary</key>
+				<true/>
+				<key>Comment</key>
+				<string>List Partitions</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Flavour</key>
+				<string>Auto</string>
+				<key>FullNvramAccess</key>
+				<false/>
+				<key>Name</key>
+				<string>List Partitions</string>
+				<key>Path</key>
+				<string>ListPartitions.efi</string>
+				<key>RealPath</key>
+				<false/>
+				<key>TextMode</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>Arguments</key>
+				<string></string>
+				<key>Auxiliary</key>
+				<true/>
+				<key>Comment</key>
+				<string>Control NVRAM security</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Flavour</key>
+				<string>Auto</string>
+				<key>FullNvramAccess</key>
+				<false/>
+				<key>Name</key>
+				<string>Control NVRAM security</string>
+				<key>Path</key>
+				<string>OpenControl.efi</string>
+				<key>RealPath</key>
+				<false/>
+				<key>TextMode</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>Arguments</key>
+				<string></string>
+				<key>Auxiliary</key>
+				<true/>
+				<key>Comment</key>
+				<string>RTC RW</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Flavour</key>
+				<string>Auto</string>
+				<key>FullNvramAccess</key>
+				<false/>
+				<key>Name</key>
+				<string>RTC RW</string>
 				<key>Path</key>
 				<string>RtcRw.efi</string>
 				<key>RealPath</key>
@@ -1995,7 +2017,7 @@
 				<key>SystemAudioVolume</key>
 				<data>Rg==</data>
 				<key>boot-args</key>
-				<string>-v keepsyms=1 debug=0x100 -lilubetaall revpatch=cpuname,asset,sbvmm,diskread revcpu=1 -force_uni_control -allow_sidecar_ipad ipc_control_port_options=0 ngfxgl=1 ngfxcompat=1 nvda_drv_vrl=1</string>
+				<string>keepsyms=1 debug=0x100 -lilubetaall revpatch=cpuname,asset,sbvmm,diskread revcpu=1 -force_uni_control -allow_sidecar_ipad ipc_control_port_options=0 ngfxgl=1 ngfxcompat=1 nvda_drv_vrl=1</string>
 				<key>csr-active-config</key>
 				<data>AwoAAA==</data>
 				<key>run-efi-updater</key>
