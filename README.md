@@ -9,7 +9,7 @@
 | Chipset | AMD X570 (Zen 2/3) |
 | RAM | 2x8GB DDR4-3200 |
 | GPU 0 | AMD Radeon Vega 7 |
-| GPU 1 | NVIDIA GeForce GTX 1080 |
+| GPU 1 | NVIDIA GeForce GTX 1060 3GB |
 | Ethernet | Intel I211-AT GbE |
 | WiFi | Broadcom BCM943602CS |
 | Bluetooth | Broadcom BCM943602CS |
@@ -24,49 +24,52 @@
 | `M2A` | Empty | -- |
 | `M2B` | Sabrent Rocket nano (512GB) | PCIe 3.0 x4 |
 | `M2C` | Samsung SSD 960 EVO (500GB) | PCIe 3.0 x4 |
-| `PCIEX16` | NVIDIA GeForce GTX 1080 | PCIe 3.0 x16 |
-| `PCIEX1_1` | Empty | -- |
-| `PCIEX8` | SAS2008 PCI-Express Fusion-MPT SAS-2 [Falcon] | PCIe 2.0 x8 |
+| `PCIEX16` | Empty | -- |
+| `PCIEX1_1` | BCM43602 802.11ac Wireless LAN SoC | PCIe 1.1 x1 |
+| `PCIEX8` | NVIDIA GeForce GTX 1060 3GB | PCIe 3.0 x4 |
 | `PCIEX1_2` | Empty | -- |
-| `PCIEX4` | BCM43602 802.11ac Wireless LAN SoC | PCIe 1.1 x1 |
+| `PCIEX4` | Empty | -- |
 | `THB_C` | Empty | -- |
 
-### SATA devices over `PCI_E4`
-| SAS Domain Port | Device |
+### SATA devices
+| SATA Port | Device |
 | --- | --- | 
-| `SCSI Target Device @ 9` | APPLE HDD ST500L | 
-| `SCSI Target Device @ 10` | SanDisk SD6SB1M1 | 
-| `SCSI Target Device @ 11` | WDC WD40EFZX-68A | 
-| `SCSI Target Device @ 12` | ST1000LM035-1RK1 | 
-| `SCSI Target Device @ 13` | ST9500424AS | 
-| `SCSI Target Device @ 14` | Not powered | 
-| `SCSI Target Device @ 15` | Not powered | 
+| 1 | APPLE HDD ST500L | 
+| 2 | SanDisk SD6SB1M1 | 
+| 3 | WDC WD40EFZX-68A | 
+| 4 | ST1000LM035-1RK1 | 
+| 5 | None | 
+| 6 | None | 
 
 ## Operating Systems
 | OS | Version | Location |
 | --- | --- | --- |
-| macOS | Sonoma 14.2b3 | Sabrent Rocket nano |
-| macOS | Ventura 13.6.3 | TBA |
-| macOS | Catalina 10.15.7 | TBA |
-| macOS | High Sierra 10.13.6 | TBA |
-| Linux | Manjaro 23.0.4 | SanDisk SD6SB1M1 |
-| Windows | 11 23590 | Samsung SSD 960 EVO |
+| macOS | Sonoma | Sabrent Rocket nano |
+| macOS | Ventura | TBA |
+| macOS | Catalina | TBA |
+| macOS | High Sierra | TBA |
+| Linux | Arch Linux | ST1000LM035-1RK1 |
+| Windows | 11 | Samsung SSD 960 EVO |
 
 ## OpenCore Setup
-OpenCore version: **0.9.7**  
-Last kext updates: **11.27.23**  
+OpenCore version: **0.9.8**  
+Last kext updates: **12.30.23**  
 Current location: **Sabrent Rocket nano**  
 
 ### ACPI configuration
-| ACPI table | Prebuilt | Enabled | Notes |
-| --- | --- | --- | --- |  
-| `SSDT-EC-USBX-DESKTOP` | Yes | Yes | Required for macOS boot |  
-| `SSDT-GPU-DISABLE` | No | No | Disabled for non-Metal + Metal |  
-| `SSDT-HPET` | No | Yes | Disabling makes pre-Big Sur freeze |  
+| ACPI table | Prebuilt | Enabled | 
+| --- | --- | --- | 
+| `SSDT-EC` | No | Yes | 
+| `SSDT-HPET` | No | Yes | 
+| `SSDT-PMC` | No | Yes | 
+| `SSDT-RHUB` | No | Yes | 
+| `SSDT-SBUS-MCHC` | No | Yes | 
+| `SSDT-USBX` | No | Yes |
 
 ### Driver configuration
 | Driver | Source |
 | --- | --- |
+| `AudioDxe.efi` | OpenCorePkg |
 | `btrfs_x64.efi` | rEFInd |
 | `CrScreenshotDxe.efi` | OpenCorePkg |
 | `ext2_x64.efi` | rEFInd |
@@ -86,14 +89,13 @@ Current location: **Sabrent Rocket nano**
 ### Kext configuration
 | Kext | Mode | Kernel Min | Kernel Max |
 | --- | --- | --- | --- |
-| `AirportBrcmFixup.kext` | Add | `17.0.0` | `23.9.99` |
 | `AMDRyzenCPUPowerManagement.kext` | Add | `17.0.0` | `23.9.99` |
 | `AMFIPass.kext` | Add | `20.0.0` | `23.9.99` |
 | `AppleALC.kext` | Add | `17.0.0` | `23.9.99` |
 | `AppleMCEReporterDisabler.kext` | Add | `17.0.0` | `23.9.99` |
-| `AppleIGB.kext` | Add | `20.0.0` | `23.9.99` |
-| `AstekFusion2Adapter.kext` | Add | `17.0.0` | `23.9.99` |
-| `AstekFusion2Family.kext` | Add | `17.0.0` | `23.9.99` |
+| `AppleIGB.kext` | Add | `17.0.0` | `23.9.99` |
+| `BFixup.kext` | Add | `20.0.0` | `23.9.99` |
+| `CatalinaI210Ethernet.kext` | Add | `20.0.0` | `23.9.99` |
 | `CSLVFixup.kext` | Add | `20.0.0` | `23.9.99` |
 | `DebugEnhancer.kext` | Add | `17.0.0` | `23.9.99` |
 | `ECM-Override.kext` | Add | `23.0.0` | `23.9.99` |
@@ -111,5 +113,4 @@ Current location: **Sabrent Rocket nano**
 | `VirtualSMC.kext` | Add | `17.0.0` | `23.9.99` |
 | `WhateverGreen.kext` | Add | `17.0.0`</br>`22.0.0` | `18.9.99`</br>`22.9.99` |
 
-
-
+### Tool configuration
