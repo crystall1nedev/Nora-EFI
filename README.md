@@ -112,5 +112,3 @@ Current location: **Sabrent Rocket nano**
 | `USBMap.kext` | Add | `17.0.0` | `23.9.99` |
 | `VirtualSMC.kext` | Add | `17.0.0` | `23.9.99` |
 | `WhateverGreen.kext` | Add | `17.0.0`</br>`22.0.0` | `18.9.99`</br>`22.9.99` |
-
-### Tool configuration
