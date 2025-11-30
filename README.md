@@ -1,4 +1,4 @@
-# Nora EFI and device configuration
+   # Nora EFI and device configuration
 **This repository is used to back up the EFI folder for Nora**, which is my main AMD64 build.
 
 ## Quick specifications
@@ -21,40 +21,37 @@
 ### PCIe devices 
 | PCIe Slot | Device | Link Speed |
 | --- | --- | --- |
-| `M2A` | Empty | -- |
-| `M2B` | Sabrent Rocket nano (512GB) | PCIe 3.0 x4 |
-| `M2C` | Samsung SSD 960 EVO (500GB) | PCIe 3.0 x4 |
-| `PCIEX16` | Empty | -- |
-| `PCIEX1_1` | BCM43602 802.11ac Wireless LAN SoC | PCIe 1.1 x1 |
-| `PCIEX8` | NVIDIA GeForce GTX 1060 3GB | PCIe 3.0 x4 |
-| `PCIEX1_2` | Empty | -- |
+| `M2A` | Intel SSDPEKNW512G8 | PCIe 3.0 x4 |
+| `M2B` | Empty | -- |
+| `M2C` | Empty | -- |
+| `PCIEX16` | NVIDIA GeForce GTX 1080 | PCIe 3.0 x16 |
+| `PCIEX1_1` | Empty | -- |
+| `PCIEX8` | Empty | -- |
+| `PCIEX1_2` | BCM43602 802.11ac Wireless LAN SoC | PCIe 1.1 x1 |
 | `PCIEX4` | Empty | -- |
 | `THB_C` | Empty | -- |
 
 ### SATA devices
 | SATA Port | Device |
 | --- | --- | 
-| 1 | APPLE HDD ST500L | 
-| 2 | SanDisk SD6SB1M1 | 
-| 3 | WDC WD40EFZX-68A | 
-| 4 | ST1000LM035-1RK1 | 
-| 5 | None | 
-| 6 | None | 
+| 1 | Empty | 
+| 2 | Empty | 
+| 3 | Empty | 
+| 4 | Empty | 
+| 5 | Empty | 
+| 6 | Empty | 
 
 ## Operating Systems
 | OS | Version | Location |
 | --- | --- | --- |
-| macOS | Sonoma | Sabrent Rocket nano |
-| macOS | Ventura | TBA |
-| macOS | Catalina | TBA |
-| macOS | High Sierra | TBA |
+| macOS | Tahoe | Intel SSDPEKNW512G8 |
 | Linux | Arch Linux | ST1000LM035-1RK1 |
 | Windows | 11 | Samsung SSD 960 EVO |
 
 ## OpenCore Setup
-OpenCore version: **0.9.8**  
-Last kext updates: **12.30.23**  
-Current location: **Sabrent Rocket nano**  
+OpenCore version: **1.0.6**  
+Last kext updates: **11.30.25**  
+Current location: **Intel SSDPEKNW512G8**  
 
 ### ACPI configuration
 | ACPI table | Prebuilt | Enabled | 
@@ -69,46 +66,48 @@ Current location: **Sabrent Rocket nano**
 ### Driver configuration
 | Driver | Source |
 | --- | --- |
+| `apfs_aligned.efi` | Apple |
 | `AudioDxe.efi` | OpenCorePkg |
 | `btrfs_x64.efi` | rEFInd |
 | `CrScreenshotDxe.efi` | OpenCorePkg |
-| `ext2_x64.efi` | rEFInd |
+| `FirmwareSettingsEntry.efi` | OpenCorePkg |
 | `ext4_x64.efi` | rEFInd |
+| `Hash2DxeCrypto.efi` | OpenCorePkg |
 | `HfsPlus.efi` | OpenCorePkg |
-| `NvmExpressDxe.efi` | OpenCorePkg |
 | `OpenCanopy.efi` | OpenCorePkg |
-| `OpenLegacyBoot.efi` | OpenCorePkg |
 | `OpenLinuxBoot.efi` | OpenCorePkg |
-| `OpenNtfsDxe.efi` | OpenCorePkg |
-| `OpenPartitionDxe.efi` | OpenCorePkg |
+| `OpenNetworkBoot.efi` | OpenCorePkg |
 | `OpenRuntime.efi` | OpenCorePkg |
-| `reiserfs_x64.efi` | rEFInd |
 | `ResetNvramEntry.efi` | OpenCorePkg |
 | `ToggleSipEntry.efi` | OpenCorePkg |
 
 ### Kext configuration
 | Kext | Mode | Kernel Min | Kernel Max |
 | --- | --- | --- | --- |
-| `AMDRyzenCPUPowerManagement.kext` | Add | `17.0.0` | `23.9.99` |
-| `AMFIPass.kext` | Add | `20.0.0` | `23.9.99` |
-| `AppleALC.kext` | Add | `17.0.0` | `23.9.99` |
-| `AppleMCEReporterDisabler.kext` | Add | `17.0.0` | `23.9.99` |
-| `AppleIGB.kext` | Add | `17.0.0` | `23.9.99` |
-| `BFixup.kext` | Add | `20.0.0` | `23.9.99` |
-| `CatalinaI210Ethernet.kext` | Add | `20.0.0` | `23.9.99` |
-| `CSLVFixup.kext` | Add | `20.0.0` | `23.9.99` |
-| `DebugEnhancer.kext` | Add | `17.0.0` | `23.9.99` |
-| `ECM-Override.kext` | Add | `23.0.0` | `23.9.99` |
-| `FeatureUnlock.kext` | Add | `17.0.0` | `23.9.99` |
-| `IO80211FamilyLegacy.kext` | Add | `23.0.0` | `23.9.99` |
-| `IOSkywalkFamily.kext` | Add</br>Block | `23.0.0` | `23.9.99` |
-| `Lilu.kext` | Add | `17.0.0` | `23.9.99` |
-| `NootedRed.kext` | Add</br>Add | `19.0.0`</br>`23.0.0` | `21.9.9`</br>`23.9.99` |
-| `NVMeFix.kext` | Add | `17.0.0` | `23.9.99` |
-| `RadeonSensor.kext` | Add | `19.0.0` | `23.9.99` |
-| `RestrictEvents.kext` | Add | `17.0.0` | `23.9.99` |
-| `SMCAMDProcessor.kext` | Add | `17.0.0` | `23.9.99` |
-| `SMCRadeonGPU.kext` | Add | `19.0.0` | `23.9.99` |
-| `USBMap.kext` | Add | `17.0.0` | `23.9.99` |
-| `VirtualSMC.kext` | Add | `17.0.0` | `23.9.99` |
+| `AMDRyzenCPUPowerManagement.kext` | Add | `17.0.0` | `25.9.99` |
+| `AMFIPass.kext` | Add | `20.0.0` | `24.9.99` |
+| `AppleALC.kext` | Add | `17.0.0` | `25.9.99` |
+| `AppleMCEReporterDisabler.kext` | Add | `17.0.0` | `25.9.99` |
+| `CatalinaI210Ethernet.kext` | Add | `20.0.0` | `25.9.99` |
+| `CSLVFixup.kext` | Add | `20.0.0` | `25.9.99` |
+| `DebugEnhancer.kext` | Add | `17.0.0` | `25.9.99` |
+| `ECM-Override.kext` | Add | `23.0.0` | `25.9.99` |
+| `FeatureUnlock.kext` | Add | `17.0.0` | `25.9.99` |
+| `ForgedInvariant.kext` | Add | `17.0.0` | `25.9.99` |
+| `IntelMKLFixup.kext` | Add | `20.0.0` | `25.9.99` |
+| `IO80211FamilyLegacy.kext` | Add | `23.0.0` | `25.9.99` |
+| `IOSkywalkFamily.kext` | Add</br>Block | `23.0.0` | `25.9.99` |
+| `Lilu.kext` | Add | `17.0.0` | `25.9.99` |
+| `NootedRed.kext` | Add</br>Add | `19.0.0`</br>`23.0.0` | `21.9.9`</br>`25.9.99` |
+| `NVMeFix.kext` | Add | `17.0.0` | `25.9.99` |
+| `RestrictEvents.kext` | Add | `17.0.0` | `25.9.99` |
+| `SMCAMDProcessor.kext` | Add | `17.0.0` | `25.9.99` |
+| `SMCRadeonSensors.kext` | Add | `19.0.0` | `25.9.99` |
+| `USBMap.kext` | Add | `17.0.0` | `25.9.99` |
+| `VirtualSMC.kext` | Add | `17.0.0` | `25.9.99` |
 | `WhateverGreen.kext` | Add | `17.0.0`</br>`22.0.0` | `18.9.99`</br>`22.9.99` |
+| `YAFOAppleIGB.kext` | Add | `17.0.0` | `25.9.99` |
+
+### OCLP root patching configuration
+- `modern_wireless.py` required for macOS Sonoma and later.
+- `modern_audio.py` required for macOS Tahoe beta 2 and later.

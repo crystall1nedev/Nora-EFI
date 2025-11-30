@@ -1,0 +1,9 @@
+# Exclude everything else in the EFI folder
+EFI/*
+!EFI/OC
+
+# macOS bullshit
+._*
+.DS_Store
+.Trashes/
+.fseventsd/
