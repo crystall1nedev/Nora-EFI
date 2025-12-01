@@ -7,9 +7,9 @@
 | Motherboard | GIGABYTE X570 AORUS ULTRA rev 1.2 |
 | CPU | AMD Ryzen 5 5600G with Radeon Graphics |
 | Chipset | AMD X570 (Zen 2/3) |
-| RAM | 2x8GB DDR4-3200 |
+| RAM | 4x8GB DDR4-3200 |
 | GPU 0 | AMD Radeon Vega 7 |
-| GPU 1 | NVIDIA GeForce GTX 1060 3GB |
+| GPU 1 | NVIDIA GeForce GTX 1080 |
 | Ethernet | Intel I211-AT GbE |
 | WiFi | Broadcom BCM943602CS |
 | Bluetooth | Broadcom BCM943602CS |
